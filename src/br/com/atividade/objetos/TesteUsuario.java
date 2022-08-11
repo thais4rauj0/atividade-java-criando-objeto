@@ -71,6 +71,8 @@ public class TesteUsuario {
         veiculo.setModelo("CrossFox");
         veiculo.setPlaca("BRA2E22");
 
+        System.out.println(veiculo);
+
 
 
 
