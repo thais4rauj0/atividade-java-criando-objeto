@@ -2,6 +2,7 @@ package br.com.atividade.objetos;
 
 public class Endereco {
     private int idEndereco;
+    private int idCliente;
     private int numero;
     private String logradouro;
     private String tipoLogradouro;
@@ -11,8 +12,9 @@ public class Endereco {
     private String cep;
     private String bairro;
 
-    public Endereco(int idEndereco, int numero, String logradouro, String tipoLogradouro, String complemento, String uf, String cidade, String cep, String bairro) {
+    public Endereco(int idEndereco, int idCliente, int numero, String logradouro, String tipoLogradouro, String complemento, String uf, String cidade, String cep, String bairro) {
         this.idEndereco = idEndereco;
+        this.idCliente = idCliente;
         this.numero = numero;
         this.logradouro = logradouro;
         this.tipoLogradouro = tipoLogradouro;
@@ -32,6 +34,14 @@ public class Endereco {
 
     public void setIdEndereco(int idEndereco) {
         this.idEndereco = idEndereco;
+    }
+
+    public int getIdCliente(){
+        return idCliente;
+    }
+
+    public void setIdCliente(int idCliente) {
+        this.idCliente = idCliente;
     }
 
     public int getNumero() {
@@ -102,6 +112,7 @@ public class Endereco {
     public String toString() {
         return "\n-------------ENDEREÇO---------------" +
                 "\n ID do Endereço: " + idEndereco +
+                "\n ID do Cliente: " + idCliente +
                 "\n Tipo de Logradouro: " + tipoLogradouro +
                 "\n Logradouro: " + logradouro +
                 "\n Bairro: " + bairro  +

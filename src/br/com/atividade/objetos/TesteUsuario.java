@@ -1,24 +1,9 @@
 package br.com.atividade.objetos;
 
-
-import java.time.LocalDate;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.TimeZone;
-
 public class TesteUsuario {
 
     public static void main(String[] args){
 
-        Aluguel aluguel = new Aluguel();
-        aluguel.setIdAluguel(1);
-        aluguel.setTipoAluguel("Carro de Passeio");
-        aluguel.setValor(2500);
-        aluguel.setKmRodado(25);
-        aluguel.setDataDevolucao("25/08/2022");
-        aluguel.setDataRetirada("11/08/2022");
-
-        System.out.println(aluguel);
 
         Cliente cliente = new Cliente();
         cliente.setIdCliente(1);
@@ -33,6 +18,7 @@ public class TesteUsuario {
 
         Endereco endereco = new Endereco();
         endereco.setIdEndereco(1);
+        endereco.setIdCliente(cliente.getIdCliente());
         endereco.setTipoLogradouro("RUA");
         endereco.setLogradouro("Thomaz Gonzaga");
         endereco.setComplemento("");
@@ -44,21 +30,6 @@ public class TesteUsuario {
         endereco.setUf("SP");
 
         System.out.println(endereco);
-
-        Avaliacao avaliacao = new Avaliacao();
-        avaliacao.setIdAvaliação(1);
-        avaliacao.setDescricao("Carro legal");
-        avaliacao.setNota(2);
-
-        System.out.println(avaliacao);
-
-        Locadora locadora = new Locadora();
-        locadora.setIdLocadora(1);
-        locadora.setCNPJ("000.111.222/0033-44");
-        locadora.setNome("Novida");
-        locadora.setLogo("url");
-
-        System.out.println(locadora);
 
         Veiculo veiculo = new Veiculo();
         veiculo.setIdVeiculo(1);
@@ -73,13 +44,35 @@ public class TesteUsuario {
 
         System.out.println(veiculo);
 
+        Locadora locadora = new Locadora();
+        locadora.setIdLocadora(1);
+        locadora.setIdEndereco(endereco.getIdEndereco());
+        locadora.setIdVeiculo(veiculo.getIdVeiculo());
+        locadora.setCNPJ("000.111.222/0033-44");
+        locadora.setNome("Novida");
+        locadora.setLogo("url");
 
+        System.out.println(locadora);
 
+        Aluguel aluguel = new Aluguel();
+        aluguel.setIdAluguel(1);
+        aluguel.setIdCliente(cliente.getIdCliente());
+        aluguel.setIdVeiculo(veiculo.getIdVeiculo());
+        aluguel.setTipoAluguel("Carro de Passeio");
+        aluguel.setValor(2500);
+        aluguel.setKmRodado(25);
+        aluguel.setDataDevolucao("25/08/2022");
+        aluguel.setDataRetirada("11/08/2022");
 
+        System.out.println(aluguel);
 
+        Avaliacao avaliacao = new Avaliacao();
+        avaliacao.setIdAvaliacao(1);
+        avaliacao.setIdCliente(cliente.getIdCliente());
+        avaliacao.setIdLocadora(locadora.getIdLocadora());
+        avaliacao.setDescricao("Carro legal");
+        avaliacao.setNota(2);
 
-
-
-
+        System.out.println(avaliacao);
     }
 }

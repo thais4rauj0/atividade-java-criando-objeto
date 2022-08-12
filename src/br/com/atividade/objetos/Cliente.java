@@ -22,6 +22,7 @@ public class Cliente {
     public Cliente() {
     }
 
+
     public int getIdCliente() {
         return idCliente;
     }
@@ -80,7 +81,8 @@ public class Cliente {
 
     @Override
     public String toString() {
-        return "\n----------CLIENTE---------------"+"\n ID do Cliente: " + idCliente +
+        return "\n----------CLIENTE---------------"+
+                "\n ID do Cliente: " + idCliente +
                 "\n Data da criação: " + dataCriacao +
                 "\n Data de Nascimento: " + dataNascimento +
                 "\n Nome: " + nome +
